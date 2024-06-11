@@ -16,47 +16,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-YK-iPu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="HWJ-WB-AF3">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-YK-iPu">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWB-Fx-jKa">
-                                        <rect key="frame" x="176" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWB-Fx-jKa">
+                                        <rect key="frame" x="30" y="0.0" width="333" height="144"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCk-A7-tfc">
-                                        <rect key="frame" x="37" y="81" width="320" height="216"/>
+                                        <rect key="frame" x="30" y="205" width="333" height="144"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubC-LM-IeU">
-                                        <rect key="frame" x="142" y="358.33333333333337" width="109.33333333333331" height="319.33333333333337"/>
+                                        <rect key="frame" x="30" y="410" width="333" height="144"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Start Timer">
                                             <backgroundConfiguration key="background">
                                                 <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="timerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsb-df-XnN"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb8-Jh-hXM">
-                                        <rect key="frame" x="176" y="738.66666666666663" width="41.333333333333343" height="20.333333333333371"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb8-Jh-hXM">
+                                        <rect key="frame" x="30" y="615" width="333" height="144"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lWB-Fx-jKa" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="0Fs-DU-Nz1"/>
+                                    <constraint firstAttribute="trailing" secondItem="lWB-Fx-jKa" secondAttribute="trailing" constant="30" id="6kY-CG-VHJ"/>
+                                    <constraint firstItem="Rb8-Jh-hXM" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="UIt-0m-SSi"/>
+                                    <constraint firstItem="ubC-LM-IeU" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="WRq-U4-QyB"/>
+                                    <constraint firstAttribute="trailing" secondItem="pCk-A7-tfc" secondAttribute="trailing" constant="30" id="cci-Vz-XFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rb8-Jh-hXM" secondAttribute="trailing" constant="30" id="efX-Lj-5CI"/>
+                                    <constraint firstItem="pCk-A7-tfc" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="hbT-PH-P2M"/>
+                                    <constraint firstAttribute="trailing" secondItem="ubC-LM-IeU" secondAttribute="trailing" constant="30" id="wph-Vy-xFM"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EoB-YK-iPu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2gy-ma-cQe"/>
-                            <constraint firstItem="EoB-YK-iPu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MlN-qV-Q88"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EoB-YK-iPu" secondAttribute="bottom" id="qJT-p6-m3F"/>
-                            <constraint firstItem="EoB-YK-iPu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zMe-P2-w12"/>
+                            <constraint firstItem="EoB-YK-iPu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4rG-Yc-6LV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EoB-YK-iPu" secondAttribute="trailing" id="6po-2d-jNS"/>
+                            <constraint firstItem="HWJ-WB-AF3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7mI-HK-gug"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EoB-YK-iPu" secondAttribute="bottom" id="8uY-Ok-Xdr"/>
+                            <constraint firstItem="EoB-YK-iPu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AJQ-pP-6Zh"/>
+                            <constraint firstItem="HWJ-WB-AF3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="awD-NT-iBN"/>
+                            <constraint firstAttribute="bottom" secondItem="HWJ-WB-AF3" secondAttribute="bottom" id="ihd-kO-NE7"/>
+                            <constraint firstItem="HWJ-WB-AF3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oIe-X6-hJe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImage" destination="HWJ-WB-AF3" id="YdC-KO-FWS"/>
+                        <outlet property="countdownLabel" destination="Rb8-Jh-hXM" id="VBE-Xg-oEL"/>
                         <outlet property="dateTimeLabel" destination="lWB-Fx-jKa" id="I7c-97-v5C"/>
+                        <outlet property="durationPicked" destination="pCk-A7-tfc" id="Ce0-gJ-9sg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="333.33334350585938" height="250"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
