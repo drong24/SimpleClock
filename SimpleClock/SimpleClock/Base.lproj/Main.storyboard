@@ -31,18 +31,28 @@
                                     <datePicker contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCk-A7-tfc">
                                         <rect key="frame" x="30" y="205" width="333" height="144"/>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubC-LM-IeU">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcI-zv-eKb">
                                         <rect key="frame" x="30" y="410" width="333" height="144"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Start Timer">
-                                            <backgroundConfiguration key="background">
-                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="timerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsb-df-XnN"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubC-LM-IeU">
+                                                <rect key="frame" x="112" y="55" width="109.33333333333331" height="34.333333333333343"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="timerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsb-df-XnN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ubC-LM-IeU" firstAttribute="centerX" secondItem="JcI-zv-eKb" secondAttribute="centerX" id="Dh2-g8-FKX"/>
+                                            <constraint firstItem="ubC-LM-IeU" firstAttribute="centerY" secondItem="JcI-zv-eKb" secondAttribute="centerY" id="za5-Bh-dMe"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb8-Jh-hXM">
                                         <rect key="frame" x="30" y="615" width="333" height="144"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -53,12 +63,12 @@
                                 <constraints>
                                     <constraint firstItem="lWB-Fx-jKa" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="0Fs-DU-Nz1"/>
                                     <constraint firstAttribute="trailing" secondItem="lWB-Fx-jKa" secondAttribute="trailing" constant="30" id="6kY-CG-VHJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JcI-zv-eKb" secondAttribute="trailing" constant="30" id="GxA-MW-dn3"/>
                                     <constraint firstItem="Rb8-Jh-hXM" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="UIt-0m-SSi"/>
-                                    <constraint firstItem="ubC-LM-IeU" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="WRq-U4-QyB"/>
                                     <constraint firstAttribute="trailing" secondItem="pCk-A7-tfc" secondAttribute="trailing" constant="30" id="cci-Vz-XFi"/>
                                     <constraint firstAttribute="trailing" secondItem="Rb8-Jh-hXM" secondAttribute="trailing" constant="30" id="efX-Lj-5CI"/>
                                     <constraint firstItem="pCk-A7-tfc" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="hbT-PH-P2M"/>
-                                    <constraint firstAttribute="trailing" secondItem="ubC-LM-IeU" secondAttribute="trailing" constant="30" id="wph-Vy-xFM"/>
+                                    <constraint firstItem="JcI-zv-eKb" firstAttribute="leading" secondItem="EoB-YK-iPu" secondAttribute="leading" constant="30" id="ptn-RZ-fN2"/>
                                 </constraints>
                             </stackView>
                         </subviews>
