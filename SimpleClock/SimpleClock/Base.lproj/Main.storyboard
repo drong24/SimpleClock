@@ -43,9 +43,9 @@
                                             <action selector="timerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsb-df-XnN"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb8-Jh-hXM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb8-Jh-hXM">
                                         <rect key="frame" x="30" y="615" width="333" height="144"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -80,6 +80,7 @@
                         <outlet property="countdownLabel" destination="Rb8-Jh-hXM" id="VBE-Xg-oEL"/>
                         <outlet property="dateTimeLabel" destination="lWB-Fx-jKa" id="I7c-97-v5C"/>
                         <outlet property="durationPicked" destination="pCk-A7-tfc" id="Ce0-gJ-9sg"/>
+                        <outlet property="startTimerButton" destination="ubC-LM-IeU" id="3Xo-Kn-uKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

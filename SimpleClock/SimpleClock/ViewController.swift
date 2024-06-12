@@ -16,7 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var durationPicked: UIDatePicker!
     
     @IBOutlet weak var countdownLabel: UILabel!
-
+    
+    @IBOutlet weak var startTimerButton: UIButton!
+    
+    var timer = Timer()
+    var duration : Double?
+    var timerEnded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,7 +44,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func timerButton(_ sender: UIButton) {
-        countdownLabel.text =  String(durationPicked.countDownDuration)
+        // check if button is for start timer or stop music
+        if (timerEnded == false) {
+            sender.isUserInteractionEnabled = false
+            sender.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            duration = durationPicked.countDownDuration
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startCountDown), userInfo: nil, repeats: true)
+            //countdownLabel.text = String(format: "%.1f", duration!)
+        }
+        else {
+            startTimerButton.setTitle("Start Timer", for: .normal)
+            timerEnded = false
+        }
+
+    }
+    
+    @objc func startCountDown() {
+        if (duration! >= 0) {
+            countdownLabel.text = String(format: "%.1f", duration!)
+            duration! -= 1.0;
+        }
+        else {
+            timer.invalidate()
+            timerEnded = true
+            startTimerButton.isUserInteractionEnabled = true
+            startTimerButton.backgroundColor = UIColor.clear
+            startTimerButton.setTitle("Stop Music", for: .normal)
+        }
     }
 }
 
