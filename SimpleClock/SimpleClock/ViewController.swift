@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -23,6 +24,9 @@ class ViewController: UIViewController {
     var duration : Double?
     var durationLabel : timeval?
     var timerEnded = false
+    var url = Bundle.main.url(forResource: "timerEndSound", withExtension: "wav")
+    var audioPlayer : AVAudioPlayer!
+
     
     
     override func viewDidLoad() {
@@ -41,7 +45,7 @@ class ViewController: UIViewController {
         let df = DateFormatter()
         df.dateFormat = "E, d MMM yyyy HH:mm:ss"
         
-        // updates date and time per second
+        // updates clock every second
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { Timer in
             let now = df.string(from: Date())
             self.dateTimeLabel.text = now
@@ -55,11 +59,11 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.black.withAlphaComponent(0.2)
             duration = durationPicked.countDownDuration
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startCountDown), userInfo: nil, repeats: true)
-            //countdownLabel.text = String(format: "%.1f", duration!)
         }
         else {
             startTimerButton.setTitle("Start Timer", for: .normal)
             timerEnded = false
+            audioPlayer.stop()
         }
 
     }
@@ -76,6 +80,9 @@ class ViewController: UIViewController {
             startTimerButton.isUserInteractionEnabled = true
             startTimerButton.backgroundColor = UIColor.clear
             startTimerButton.setTitle("Stop Music", for: .normal)
+            audioPlayer = try! AVAudioPlayer(contentsOf: url!)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.play()
         }
     }
 }
